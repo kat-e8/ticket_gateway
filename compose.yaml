@@ -7,7 +7,7 @@ services:
     hostname: tkt_gw
     container_name: tkt_gw
     ports:
-      - 9091:8088
+      - 9080:8088
     labels:
       tsdproxy.enable: true
       tsdproxy.ephemeral: false
