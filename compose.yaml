@@ -12,7 +12,7 @@ services:
       tsdproxy.enable: true
       tsdproxy.ephemeral: false
     volumes:
-      - kt-gw-data:/usr/local/bin/ignition/data
+      - tkt-gw-data:/usr/local/bin/ignition/data
     #  - ./gw-init/gateway.gwbk:/restore.gwbk
     #  - ./gw-init/gateway-uuid.txt:/usr/local/bin/ignition/data/.uuid
     #  - ./gw-init/gateway-metro-keystore:/usr/local/bin/ignition/data/local/metro-keystore
