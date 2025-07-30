@@ -1,23 +1,23 @@
 services:
-  ticket_gw:
+  tkt_gw:
     build:
       context: gw-build
       args:
-        IGNITION_VERSION: 8.1.45
-    hostname: ticket_gw
-    container_name: ticket_gw
+        IGNITION_VERSION: 8.1.48
+    hostname: tkt_gw
+    container_name: tkt_gw
     ports:
       - 9091:8088
     labels:
       tsdproxy.enable: true
       tsdproxy.ephemeral: false
     volumes:
-      - ticket-gw-data:/usr/local/bin/ignition/data
+      - kt-gw-data:/usr/local/bin/ignition/data
     #  - ./gw-init/gateway.gwbk:/restore.gwbk
     #  - ./gw-init/gateway-uuid.txt:/usr/local/bin/ignition/data/.uuid
     #  - ./gw-init/gateway-metro-keystore:/usr/local/bin/ignition/data/local/metro-keystore
     networks:
-      - ticket-gw-network
+      - tkt-gw-network
     environment:
       - IGNITION_EDITION=standard
       - GATEWAY_ADMIN_PASSWORD=katlego
@@ -27,6 +27,6 @@ services:
       -m 2048
    #   -r /restore.gwbk
 networks:
-  ticket-gw-network:
+  tkt-gw-network:
 volumes:
-  ticket-gw-data:
+  tkt-gw-data:
